@@ -24,8 +24,8 @@ const SignupPage = ({ navigation }) => {
             await createUserWithEmailAndPassword(auth, email, password);
             Alert.alert('Success', 'Successfully joined the family!! Enjoy!');
 
-            // Navigate to Dashboard and pass the username as a parameter
-            navigation.navigate('Dashboard', { username: name });
+            // Navigate to Dashboard and pass the username and student number as parameters
+            navigation.navigate('Dashboard', { username: name, studentNumber });
         } catch (error) {
             const errorMessage = error.message;
             Alert.alert('Sign Up Incomplete', errorMessage);

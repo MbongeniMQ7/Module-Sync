@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground, ScrollView, Image } from 'react-native';
+// Import the BusinessAnalysis screen
+import BusinessAnalysis from './BusinessAnalysis';
 
 const Modules = ({ navigation }) => {
   return (
@@ -15,7 +17,7 @@ const Modules = ({ navigation }) => {
           {/* Module 1A */}
           <TouchableOpacity 
             style={styles.moduleBox} 
-            onPress={() => navigation.navigate('BusinessAnalysis')} // Navigate to Module 1 detail page
+            onPress={() => navigation.navigate('BusinessAnalysis')} // Navigate to BusinessAnalysis screen
           >
             <Image source={require('../../assets/bay.png')} style={styles.moduleImage} />
             <Text style={styles.moduleTitle}>Business Analysis1A</Text>

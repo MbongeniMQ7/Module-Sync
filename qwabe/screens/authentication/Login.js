@@ -21,10 +21,10 @@ const Login = ({ navigation }) => {
         const user = userCredential.user;
         console.log('Welcome to ModuleSync:', user);
         
-        // Assuming the username is derived from the email
-        const username = email.split('@')[0]; // Adjust this based on how you store the username
+       
+        const username = email.split('@')[0]; 
         
-        navigation.navigate('Dashboard', { username }); // Pass username to Dashboard
+        navigation.navigate('Dashboard', { username }); 
       })
       .catch((error) => {
         const errorMessage = error.message;

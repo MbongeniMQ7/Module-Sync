@@ -3,14 +3,19 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SignupPage from './qwabe/screens/authentication/SignUp'; // Corrected import path
-import Login from './qwabe/screens/authentication/Login'; // Corrected import path
-import ForgotPassword from './qwabe/screens/authentication/ForgotPassword'; // Corrected import path
+import SignupPage from './qwabe/screens/authentication/SignUp'; 
+import Login from './qwabe/screens/authentication/Login';
+import ForgotPassword from './qwabe/screens/authentication/ForgotPassword'; 
 import Dashboard from './qwabe/screens/DashBoard';
 import Modules from './qwabe/screens/Modules';
-import Quiz from './qwabe/screens/Quiz'; // Corrected import path
-import StudyTips from './qwabe/screens/StudyTips'; // Corrected import path
-import Tests from './qwabe/screens/Tests'; // Corrected import path
+import Quiz from './qwabe/screens/Quiz'; 
+import StudyTips from './qwabe/screens/StudyTips'; 
+import Tests from './qwabe/screens/Tests'; 
+import TipsBusinessAnalysis from './qwabe/screens/TipsBusinessAnalysis';
+import TipsDevelopmentSoftware from './qwabe/screens/TipsDevelopmentSoftware';
+import TipsInformationSystems from './qwabe/screens/TipsInformationSystems';
+import TipsSystemsSoftware from './qwabe/screens/TipsSystemsSoftware';
+import QuizScreen from './qwabe/games/QuizScreen';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -26,6 +31,11 @@ export default function App() {
         <Stack.Screen name="Quiz" component={Quiz} options={{ headerShown: false }} />
         <Stack.Screen name="StudyTips" component={StudyTips} options={{ headerShown: false }} />
         <Stack.Screen name="Tests" component={Tests} options={{ headerShown: false }} />
+        <Stack.Screen name="TipsBusinessAnalysis" component={TipsBusinessAnalysis} options={{ headerShown: false }} />
+        <Stack.Screen name="TipsDevelopmentSoftware" component={TipsDevelopmentSoftware} options={{ headerShown: false }} />
+        <Stack.Screen name="TipsInformationSystems" component={TipsInformationSystems} options={{ headerShown: false }} />
+        <Stack.Screen name="TipsSystemsSoftware" component={TipsSystemsSoftware} options={{ headerShown: false }} />
+        <Stack.Screen name="QuizBusinessAnalysis" component={QuizScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

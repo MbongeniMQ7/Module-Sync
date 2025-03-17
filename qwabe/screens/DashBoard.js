@@ -2,64 +2,58 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image, ImageBackground } from 'react-native';
 
 const Dashboard = ({ route, navigation }) => {
-  const { username } = route.params; 
+  const { username, studentNumber } = route.params;
 
   return (
     <ImageBackground
-      source={require('../../assets/mod-back.png')} // Correct background image path
+      source={require('../../assets/mod-back.png')}
       style={styles.background}
       resizeMode="cover"
     >
       <ScrollView style={styles.container}>
-        {/* Header */}
         <View style={styles.header}>
           <Text style={styles.greetingText}>Hi, {username}!</Text>
+          <Text style={styles.studentNumberText}>Student Number: {studentNumber}</Text>
           <Text style={styles.questionText}>What would you like to do today?</Text>
         </View>
 
-        {/* Modules Section */}
         <TouchableOpacity 
           style={styles.section} 
-          onPress={() => navigation.navigate('Modules')} // Navigate to Modules screen
+          onPress={() => navigation.navigate('Modules')}
         >
           <Image style={styles.sectionImage} source={require('../../assets/f-back1.png')} />
           <Text style={styles.sectionTitle}>Modules</Text>
           <Text style={styles.sectionDescription}>Access learning modules and lessons.</Text>
         </TouchableOpacity>
 
-        {/* Quiz Section */}
         <TouchableOpacity 
           style={styles.section} 
-          onPress={() => navigation.navigate('Quiz')} // Navigate to Quiz screen
+          onPress={() => navigation.navigate('Quiz')}
         >
           <Image style={styles.sectionImage} source={require('../../assets/quiz.png')} />
           <Text style={styles.sectionTitle}>Quiz</Text>
           <Text style={styles.sectionDescription}>Test your knowledge with quizzes.</Text>
         </TouchableOpacity>
 
-        {/* Tests Section */}
         <TouchableOpacity 
           style={styles.section} 
-          onPress={() => navigation.navigate('Tests')} // Navigate to Tests screen
+          onPress={() => navigation.navigate('Tests')}
         >
           <Image style={styles.sectionImage} source={require('../../assets/tests.png')} />
           <Text style={styles.sectionTitle}>Tests</Text>
           <Text style={styles.sectionDescription}>Complete tests and assessments.</Text>
         </TouchableOpacity>
 
-        {/* Tips Section */}
         <TouchableOpacity 
           style={styles.section} 
-          onPress={() => navigation.navigate('StudyTips')} // Navigate to Tips screen
+          onPress={() => navigation.navigate('StudyTips')}
         >
           <Image style={styles.sectionImage} source={require('../../assets/tips.png')} />
           <Text style={styles.sectionTitle}>Tips</Text>
           <Text style={styles.sectionDescription}>Helpful study and learning tips.</Text>
         </TouchableOpacity>
 
-        {/* Bottom Navigation */}
         <View style={styles.bottomNav}>
-          
           <TouchableOpacity onPress={() => navigation.navigate('TimeTable')}>
             <Text style={styles.navText}>TimeTable</Text>
           </TouchableOpacity>
@@ -94,6 +88,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#4A148C',
   },
+  studentNumberText: {
+    fontSize: 16,
+    color: '#4A148C',
+  },
   questionText: {
     fontSize: 16,
     color: '#4A148C',
@@ -112,11 +110,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     padding: 10,
-    color: '#1E88E5', // Updated color for titles
-    backgroundColor: 'lightblue', // Light blue background for titles
+    color: '#1E88E5',
+    backgroundColor: 'lightblue',
   },
   sectionDescription: {
-    fontSize: 25,
     fontWeight: 'bold',
     paddingHorizontal: 10,
     paddingBottom: 10,
@@ -132,7 +129,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
   },
   navText: {
-    color: '#4A148C', // Color for bottom navigation text
+    color: '#4A148C',
     fontWeight: 'bold',
   }
 });
